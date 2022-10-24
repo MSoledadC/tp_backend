@@ -7,7 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Tienda de ropa</h1>
+<h1>Tienda de ropa</h1>
+    <button type="submit"><a href="index.html">Inicio</a></button>
+    <button type="submit"><a href="listar.php">Listar ropa</a></button>
+    <button type="submit"><a href="agregar.html">Agregar ropa</a></button>
+    <button type="submit"><a href="buzo.php">Buzo</a></button>
+    <button type="submit"><a href="nike.php">Nike</a></button>
+    <button type="submit"><a href="preciomayor500.php">Precio mayor a 500</a></button>
+    
+    
 
     <h2>Lista de ropa</h2>
     <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
@@ -18,6 +26,9 @@
         <th>MARCA</th>
         <th>TALLE</th>
         <th>PRECIO</th>
+        <th>IMAGEN</th>
+        <th>EDITAR</th>
+        <th>BORRAR</th>
     </tr>
     <?php
     // 1) Conexion
@@ -45,6 +56,9 @@
         <td><?php echo $reg['marca']; ?></td>
         <td><?php echo $reg['talle']; ?></td>
         <td><?php echo $reg['precio']; ?></td>
+        <td><img src="data:image/png;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" width="100px" height="100px"></td>
+        <td><a href="modificar.php?id=<?php echo $reg['id'];?>">Editar</a></td>
+        <td><a href="borrar.php?id=<?php echo $reg['id'];?>">Borrar</a></td>
         </tr>
     <?php } ?>
     </table>
