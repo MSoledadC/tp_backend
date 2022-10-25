@@ -9,30 +9,64 @@
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
   <!-- vinculacion css -->
-  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="estilos.css">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
 
   <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
 
 </head>
 
 <body>
-    <h1>Tienda de ropa</h1>
+  <header>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="flex-direction: row;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Potrero Digital</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Filtros
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="nike.php">Nike</a></li>
+              <li><a class="dropdown-item" href="preciomayor500.php">Precio mayor a 500</a></li>
+              <li><a class="dropdown-item" href="buzo.php">Buzo</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="listar.php">Listar ropa</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agregar.html">Agregar ropa</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  </header>
+  <main class="main_index" style="text-align: center">
+    <h1 class="titulo">Tienda de Ropa</h1>
+
+    <!--
     <button type="submit"><a href="index.html">Inicio</a></button>
     <button type="submit"><a href="listar.php">Listar ropa</a></button>
     <button type="submit"><a href="agregar.html">Agregar ropa</a></button>
     <button type="submit"><a href="buzo.php">Buzo</a></button>
     <button type="submit"><a href="nike.php">Nike</a></button>
     <button type="submit"><a href="preciomayor500.php">Precio mayor a 500</a></button>
-    
-    
-  
-    
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-crossorigin="anonymous"></script>
+    -->
+  </main>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
