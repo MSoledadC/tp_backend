@@ -21,7 +21,7 @@
       <div class="container-fluid">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="flex-direction: row;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Potrero Digital</a>
+            <a class="nav-link-nav active" aria-current="page" href="#">Potrero Digital</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
@@ -78,8 +78,8 @@
 
     // 4) Mostrar los datos del registro
     while ($reg = mysqli_fetch_array($datos)) {?>
-      <div class="card col-sm-12 col-md-6 col-lg-3">
-        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" width="100px" height="100px")>
+      <div class="card_listar col-sm-12 col-md-6 col-lg-3 ">
+        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" )>
         <div class="card-body">
           <h5 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h5>
           <p class="card-text">Some quick exam<i class="fa-regular fa-dollar-sign"></i>ple text to build on the card title and make up the bulk of the card's content.</p>
