@@ -2,7 +2,7 @@
 $conexion = mysqli_connect("127.0.0.1", "root", "");
 mysqli_select_db($conexion, "tienda_ropa_p7");
 
-$tipo_de_prenda = $_POST ['tipo_de_prenda'];
+$tipo_de_prenda = $_POST['tipo_de_prenda'];
 $marca = $_POST['marca'];
 $talle = $_POST['talle'];
 $precio = $_POST['precio'];

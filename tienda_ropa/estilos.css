@@ -10,6 +10,11 @@ nav {
     top: 0%;
     font-size: large;
     font-weight: 700;
+    
+}
+
+header {
+    background-color: black;
 }
 
 ul {
@@ -18,8 +23,15 @@ ul {
     /* margin: 30px; */
     width: 100%;
     justify-content: space-between;
-    margin: 15px;
+    margin: 10px;
+    color: #bba241;
 }
+
+.dropdown-menu {
+    background-color: black;
+    border-color: burlywood;
+}
+
 
 .main_index {
     background-image: url(imagenes/fondo_deporte.jpg);
@@ -34,12 +46,19 @@ ul {
 }
 
 h1 {
-    color: gainsboro;
-    padding: 20px;
+    /*  color: #ede6db;*/
+    color: transparent;
     font-weight: bolder;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    filter: drop-shadow(2px 4px 6px black);
-
+    filter: drop-shadow(2px 4px 2px #f4dc94);
+    text-transform: uppercase;
+    text-decoration-style: double;
+    background: url(imagenes/fondo_t.png) center no-repeat fixed;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    
 }
 
 body {
@@ -49,10 +68,10 @@ body {
 }
 
 .main_agregar {
-    background-color:rgb(223, 223, 223);
+    background-color: #b7a04f;
     width: 100%;
     height: 100%;
-    position: fixed;
+    padding: 20px;
 }
 
 h2 {
@@ -61,14 +80,40 @@ h2 {
         font-weight: bolder;
         font-family: sans-serif;
         filter: drop-shadow(2px 4px 6px black);    
-        padding: 45px;
+        padding: 20px;
 }
 
+.main_agregar p {
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
 
 form {
     padding: 20px;
-
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    color: black;
 }
+
+
+
+form input {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.main_filtros {
+    background-color: #b7a04f;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+    padding: 20px;
+    height: 100%;
+}
+
 
 footer {
     background-color: black;
@@ -77,11 +122,17 @@ footer {
     display: flex;
     justify-content: space-between;
     top: 0%;
-    padding: 10px 5px 5px 5px;
+    padding-top: 5px;
     font-size: small;
+    padding-bottom: 5px;
+    color: #534403f4;
+    padding: 5px;
+    padding-top: 15px;
 }
 
 .logo {
-    height: 24px;
+    height: 22px;
+    color: #ffe77ada;
+    background-color: #534403f4;
+    border-radius: 25px;
 }
-
