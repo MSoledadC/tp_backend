@@ -53,17 +53,11 @@
   <main class="main_filtros">
     <h2>Lista de ropa</h2>
     <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
-    <table border="1">
-    <tr>
-        <th>ID</th>
-        <th>TIPO DE PRENDA</th>
-        <th>MARCA</th>
-        <th>TALLE</th>
-        <th>PRECIO</th>
-        <th>IMAGEN</th>
-        <th>EDITAR</th>
-        <th>BORRAR</th>
-    </tr>
+
+    <section>
+    <div class="container">
+      <div class="row">
+
     <?php
     // 1) Conexion
     $conexion=mysqli_connect("127.0.0.1", "root", "");
@@ -83,21 +77,24 @@
 
 
     // 4) Mostrar los datos del registro
-    while ( $reg =mysqli_fetch_array($datos) ) { ?>
-        <tr>
-        <td><?php echo $reg['id']; ?></td>
-        <td><?php echo $reg['tipo_de_prenda']; ?></td>
-        <td><?php echo $reg['marca']; ?></td>
-        <td><?php echo $reg['talle']; ?></td>
-        <td><?php echo $reg['precio']; ?></td>
-        <td><img src="data:image/png;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" width="100px" height="100px"></td>
-        <td><a href="modificar.php?id=<?php echo $reg['id'];?>">Editar</a></td>
-        <td><a href="borrar.php?id=<?php echo $reg['id'];?>">Borrar</a></td>
-        </tr>
+    while ($reg = mysqli_fetch_array($datos)) {?>
+      <div class="card col-sm-12 col-md-6 col-lg-3">
+        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" width="100px" height="100px")>
+        <div class="card-body">
+          <h5 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h5>
+          <p class="card-text">Some quick exam<i class="fa-regular fa-dollar-sign"></i>ple text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body">
+        <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
+          </a>
+      </div>
+    </div>
+
     <?php } ?>
-    </table>
-    </main>
-    <footer>
+
+  </div>
+</div>
+</main>
+  <footer>
     MSoledadC©2022 <span class=" jam jam-map-marker">Bahía Blanca- Bs. As.</span>
       <div class=" btn-group-vertical" role="group" aria-label="Vertical button group">
         <a href="https://github.com/MSoledadC" target="_blank">
