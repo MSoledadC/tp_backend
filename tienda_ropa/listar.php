@@ -82,8 +82,14 @@
         <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" )>
         <div class="card-body">
           <h5 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h5>
-          <p class="card-text">Some quick exam<i class="fa-regular fa-dollar-sign"></i>ple text to build on the card title and make up the bulk of the card's content.</p>
+          <p><?php echo $reg['id']; ?></p>
+          <p> <?php echo $reg['tipo_de_prenda']; ?></p>
+          <p><?php echo $reg['talle']; ?></p>
         <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body">
+        <a href="modificar.php?id=<?php echo $reg['id'];?>">Editar</a>
+        <br>
+        <a href="borrar.php?id=<?php echo $reg['id'];?>">Borrar</a>
+        <br>
         <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
           </a>
       </div>
