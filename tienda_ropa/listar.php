@@ -21,27 +21,29 @@
       <div class="container-fluid">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="flex-direction: row;">
           <li class="nav-item">
-            <a class="nav-link-nav active" aria-current="page" href="#">Potrero Digital</a>
+            <a class="nav-link active" aria-current="page" href="#">Potrero Digital</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <h1 class="titulo">Tienda Sport</h1>
+        <div>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Filtros
-            </a>
+            <a class="nav-link nav-productos" href="productos.php">Productos</a> 
+            <a button type="button" class="btn btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+                </button></a> 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="nike.php">Nike</a></li>
-              <li><a class="dropdown-item" href="preciomayor500.php">Precio mayor a 500</a></li>
-              <li><a class="dropdown-item" href="buzo.php">Buzo</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="listar.php">Listar ropa</a></li>
+              
+              <li><a class="dropdown-item" href="nike.php">Nike</a></li>
+              <li><a class="dropdown-item" href="preciomayor500.php">Precio mayor a 500</a></li>
+              <li><a class="dropdown-item" href="buzo.php">Buzo</a></li>
             </ul>
           </li>
+        </div>
           <li class="nav-item">
             <a class="nav-link" href="agregar.html">Agregar ropa</a>
           </li>
@@ -55,50 +57,50 @@
     <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
 
     <section>
-    <div class="container">
+      <div class="container">
       <div class="row">
 
-    <?php
-    // 1) Conexion
-    $conexion=mysqli_connect("127.0.0.1", "root", "");
-    mysqli_select_db($conexion, "tienda_ropa_p7");
+      <?php
+      // 1) Conexion
+      $conexion=mysqli_connect("127.0.0.1", "root", "");
+      mysqli_select_db($conexion, "tienda_ropa_p7");
 
-    // 2) Preparar la orden SQL
-    // Sintaxis SQL SELECT
-    // SELECT * FROM nombre_tabla
-    // => Selecciona todos los campos de la siguiente tabla
-    // SELECT campos_tabla FROM nombre_tabla
-    // => Selecciona los siguientes campos de la siguiente tabla
-    $consulta= "SELECT*FROM ropa";
+      // 2) Preparar la orden SQL
+      // Sintaxis SQL SELECT
+      // SELECT * FROM nombre_tabla
+      // => Selecciona todos los campos de la siguiente tabla
+      // SELECT campos_tabla FROM nombre_tabla
+      // => Selecciona los siguientes campos de la siguiente tabla
+      $consulta= "SELECT*FROM ropa";
 
-    // 3) Ejecutar la orden y obtenemos los registros
+      // 3) Ejecutar la orden y obtenemos los registros
 
-    $datos= mysqli_query ($conexion, $consulta);
+      $datos= mysqli_query ($conexion, $consulta);
 
 
-    // 4) Mostrar los datos del registro
-    while ($reg = mysqli_fetch_array($datos)) {?>
-      <div class="card_listar col-sm-12 col-md-6 col-lg-3 ">
-        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" )>
-        <div class="card-body">
-          <h5 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h5>
-          <p><?php echo $reg['id']; ?></p>
-          <p> <?php echo $reg['tipo_de_prenda']; ?></p>
-          <p><?php echo $reg['talle']; ?></p>
-        <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body">
-        <a href="modificar.php?id=<?php echo $reg['id'];?>">Editar</a>
-        <br>
-        <a href="borrar.php?id=<?php echo $reg['id'];?>">Borrar</a>
-        <br>
-        <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
-          </a>
-      </div>
+      // 4) Mostrar los datos del registro
+      while ($reg = mysqli_fetch_array($datos)) {?>
+        <div class="card_listar col-sm-12 col-md-6 col-lg-3 ">
+          <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" )>
+          <div class="card-body">
+            <h5 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h5>
+            <p><?php echo $reg['id']; ?></p>
+            <p> <?php echo $reg['tipo_de_prenda']; ?></p>
+            <p><?php echo $reg['talle']; ?></p>
+            <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body">
+            <a href="modificar.php?id=<?php echo $reg['id'];?>">Editar</a>
+            <br>
+            <a href="borrar.php?id=<?php echo $reg['id'];?>">Borrar</a>
+            <br>
+            <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
+            </a>
+        </div>
     </div>
 
     <?php } ?>
 
   </div>
-</div>
+  </div>
 </main>
   <footer>
     MSoledadC©2022 <span class=" jam jam-map-marker">Bahía Blanca- Bs. As.</span>

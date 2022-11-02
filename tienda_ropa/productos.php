@@ -71,7 +71,7 @@
     // => Selecciona todos los campos de la siguiente tabla
     // SELECT campos_tabla FROM nombre_tabla
     // => Selecciona los siguientes campos de la siguiente tabla
-    $consulta= "SELECT*FROM ropa WHERE tipo_de_prenda = 'buzo' ";
+    $consulta= "SELECT*FROM ropa";
 
     // 3) Ejecutar la orden y obtenemos los registros
 
@@ -81,21 +81,22 @@
     // 4) Mostrar los datos del registro
     while ($reg = mysqli_fetch_array($datos)) {?>
       <div class="card_listar col-sm-12 col-md-6 col-lg-3 ">
-        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" width="100px" height="100px")>
+        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" )>
         <div class="card-body">
           <h5 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h5>
           <p> <?php echo $reg['tipo_de_prenda']; ?></p>
-          <p><?php echo $reg['talle']; ?></p>
-        <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body">
-        <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
-          </a>
-      </div>
+            <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body"></a>
+            <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
+            <br>
+            <div class="">
+                <a href="verproductos.php?id=<?php echo $reg['id'];?>"> <button type="button" name="button">Ver producto</button></a>
+            </div>
+            <a href="<?php echo $reg['link']; ?>" class="btn btn-primary">Comprar</a>
+        </div>
     </div>
 
     <?php } ?>
 
-  </div>
-</div>
 </main>
   <footer>
     MSoledadC©2022 <span class=" jam jam-map-marker">Bahía Blanca- Bs. As.</span>

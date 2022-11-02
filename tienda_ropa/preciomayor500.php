@@ -16,7 +16,7 @@
 
 </head>
 <body class="body_listar">
-<header>
+  <header>
     <nav class="navbar navbar-dark " >
       <div class="container-fluid">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="flex-direction: row;">
@@ -27,21 +27,23 @@
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <h1 class="titulo">Tienda Sport</h1>
+        <div>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Filtros
-            </a>
+            <a class="nav-link nav-productos" href="productos.php">Productos</a> 
+            <a button type="button" class="btn btn-black dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+                </button></a> 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="nike.php">Nike</a></li>
-              <li><a class="dropdown-item" href="preciomayor500.php">Precio mayor a 500</a></li>
-              <li><a class="dropdown-item" href="buzo.php">Buzo</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="listar.php">Listar ropa</a></li>
+              
+              <li><a class="dropdown-item" href="nike.php">Nike</a></li>
+              <li><a class="dropdown-item" href="preciomayor500.php">Precio mayor a 500</a></li>
+              <li><a class="dropdown-item" href="buzo.php">Buzo</a></li>
             </ul>
           </li>
+        </div>
           <li class="nav-item">
             <a class="nav-link" href="agregar.html">Agregar ropa</a>
           </li>
