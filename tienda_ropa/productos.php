@@ -89,9 +89,9 @@
             <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
             <br>
             <div class="">
-                <a href="verproductos.php?id=<?php echo $reg['id'];?>"> <button type="button" name="button">Ver producto</button></a>
+                <a href="verproductos.php?id=<?php echo $reg['id'];?>"> <button class="boton_verproducto" type="button" name="button">Ver producto</button></a>
             </div>
-            <a href="<?php echo $reg['link']; ?>" class="btn btn-primary">Comprar</a>
+            <a class="boton_comprar" href="<?php echo $reg['link']; ?>" class="btn btn-primary">Comprar</a>
         </div>
     </div>
 

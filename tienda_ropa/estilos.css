@@ -132,13 +132,24 @@ form {
     
 }
 
-
-
 form input {
     margin-bottom: 20px;
     margin-bottom: 20px;
-    margin-left: 15px;
-    max-width: fit-content;
+    margin-left: 0px;
+    
+}
+
+.form_login {
+  display: block;
+}
+
+.login {
+  text-align: center;
+  font-size: x-large;
+  margin: 15px;
+  margin-top: 25px;
+  font-weight: 700;
+  color: #cdbb70;
 }
 
 .btnenviar_agregar {
@@ -178,6 +189,27 @@ form input {
 .card-img-top {
     border-radius: 20px;
 }
+
+.boton_verproducto {
+  padding: 3px;
+  margin: 10px;
+  background-color: burlywood;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.boton_comprar {
+  border-color: burlywood;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #534403f4;
+  border-style: outset;
+  padding: 5px;
+  border-radius: 10px;
+ }
 
 .input_login {
 	border: none;
@@ -315,4 +347,12 @@ footer {
     color: #ffe77ada;
     background-color: #534403f4;
     border-radius: 25px;
+}
+
+@media (max-width: 600px) {
+  .main_index {
+    background-size: cover;
+    background-position: right;
+    background-image: url(imagenes/fondo_t.png);
+  }
 }
