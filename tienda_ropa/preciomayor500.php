@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de Ropa</title>
   <!-- vinculacion bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -41,6 +43,7 @@
                 <li><a class="dropdown-item" href="nike.php">Nike</a></li>
                 <li><a class="dropdown-item" href="preciomayor500.php">Precio mayor a 500</a></li>
                 <li><a class="dropdown-item" href="buzo.php">Buzo</a></li>
+                <li><a class="dropdown-item" href="adidas.php">Adidas</a></li>  
               </ul>
             </li>
           </div>
@@ -89,7 +92,14 @@
         <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body">
         <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
           </a>
-      </div>
+          <br>
+            <div class="">
+                <a href="verproductos.php?id=<?php echo $reg['id'];?>"> <button class="boton_verproducto" type="button" name="button">Ver producto</button></a>
+            </div>
+            <div>
+                <p> <?php echo $reg['link']; ?></p>
+            </div>
+        </div>
     </div>
 
     <?php } ?>

@@ -30,6 +30,8 @@ nav {
 
 .btn  {
     background-color: black;
+    color: darkgoldenrod;
+    border-color: darkgoldenrod;
 }
 
 .dropdown-toggle {
@@ -101,7 +103,7 @@ body {
   
 
 .main_agregar {
-    background-color: #cdbb70;
+    background: radial-gradient(circle, rgba(205,187,112,0.5718662464985995) 0%, rgba(0,0,0,1) 100%);
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -161,7 +163,7 @@ form input {
 }
 
 .main_filtros {
-    background-color: #cdbb70;
+    background: radial-gradient(circle, rgba(205,187,112,0.5718662464985995) 0%, rgba(0,0,0,1) 100%);
     text-align: center;
     color: black;
     font-weight: 500;
@@ -180,6 +182,10 @@ form input {
     width: 15%;
     height: auto;
  
+}
+
+.listar {
+  justify-content: center;
 }
 
 .card-body {
@@ -209,6 +215,12 @@ form input {
   border-style: outset;
   padding: 5px;
   border-radius: 10px;
+ }
+
+ .section_verproducto {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
  }
 
 .input_login {
@@ -303,7 +315,6 @@ form input {
 	background: linear-gradient(to right, blue, red);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	
   }
 
 
@@ -314,20 +325,18 @@ form input {
     padding: 5px;
     border-radius: 10px;
     border-color: burlywood ;
-	
   }
 
   .redireccion_error {
-	text-decoration: none;
+	  text-decoration: none;
     text-align: center;
     display: block;
-	position: absolute;
-	top: 60%;
-	left: 41%
-
+	  position: absolute;
+	  top: 60%;
+	  left: 41%
   }
 
-footer {
+  footer {
     background-color: black;
     width: 100%;
     left: 0%;
@@ -336,11 +345,10 @@ footer {
     top: 0%;
     padding-top: 5px;
     font-size: small;
-    
     color: #534403f4;
     padding: 5px;
     padding-top: 10px;
-}
+  }
 
 .logo {
     height: 22px;
@@ -350,9 +358,30 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .main_index {
-    background-size: cover;
-    background-position: right;
-    background-image: url(imagenes/fondo_t.png);
+
+  .navbar-nav {
+    flex-direction: column!important;
   }
-}
+
+  .main_index {
+    background-repeat: round!important;
+    background-position: inherit;
+  }
+
+  .card_listar {
+    width: 50%;
+    margin: 60px;
+  }
+
+  .redireccion_error {
+    top: 70%;
+    text-align: center;
+    left: auto;
+    margin: 30px;
+  }
+
+  .gradient-texto {
+    font-size: 60px;
+  }
+  
+ }

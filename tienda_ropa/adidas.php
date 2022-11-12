@@ -1,23 +1,3 @@
-<?php
-// 1) Conexion
-// a) realizar la conexion con la bbdd
-// b) seleccionar la base de datos a usar
-$conexion=mysqli_connect("127.0.0.1","root","");
-mysqli_select_db($conexion,"tienda_ropa_p7");
-// 2) Almacenamos los datos del envío GET
-// a) generar variables para el id a utilizar
-$id = $_GET['id'];
-// 3) Preparar la SQL
-// => Selecciona todos los campos de la tabla alumno donde el campo id  sea igual a $id
-// a) generar la consulta a realizar
-$consulta = "SELECT * FROM ropa WHERE id=$id";
-// 4) Ejecutar la orden y almacenamos en una variable el resultado
-// a) ejecutar la consulta
-$repuesta=mysqli_query ($conexion, $consulta);
-// 5) Transformamos el registro obtenido a un array
-$datos=mysqli_fetch_array($repuesta);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,42 +55,57 @@ $datos=mysqli_fetch_array($repuesta);
       </div>
     </nav>
   </header>
-<main class="main_filtros">
-    <h1>Descripcion del Producto</h1>
-  
-  <?php
-  // 6) asignamos a diferentes variables los respectivos valores del array $datos.
-  // este paso no es estrictamente necesario, pero es mas practico
-  //para despues llamarlos solo con el nombre de la variable
-  $tipo_de_prenda=$datos["tipo_de_prenda"];
-  $marca=$datos["marca"];
-  $talle=$datos["talle"];
-  $precio=$datos["precio"];
-  $imagen=$datos['imagen'];
-  $link=$datos["precio"];
-  $colores=$datos["colores"];?>
-  
-  <section>
+  <main class="main_filtros">
+    <h2>Lista de ropa</h2>
+    <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
+
+    <section>
     <div class="container">
       <div class="row">
-      <div class="card_listar w-50">
-        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($imagen)?>" alt="..." />
+
+    <?php
+    // 1) Conexion
+    $conexion=mysqli_connect("127.0.0.1", "root", "");
+    mysqli_select_db($conexion, "tienda_ropa_p7");
+
+    // 2) Preparar la orden SQL
+    // Sintaxis SQL SELECT
+    // SELECT * FROM nombre_tabla
+    // => Selecciona todos los campos de la siguiente tabla
+    // SELECT campos_tabla FROM nombre_tabla
+    // => Selecciona los siguientes campos de la siguiente tabla
+    $consulta= "SELECT*FROM ropa WHERE marca= 'adidas' ";
+
+    // 3) Ejecutar la orden y obtenemos los registros
+
+    $datos= mysqli_query ($conexion, $consulta);
+
+
+    // 4) Mostrar los datos del registro
+    while ($reg = mysqli_fetch_array($datos)) {?>
+      <div class="card_listar col-sm-12 col-md-6 col-lg-3 ">
+        <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" )>
         <div class="card-body">
-        <h5 class="card-title">Marca: <?php echo $marca;?></h5>
-          <p class="card-text"><?php echo $tipo_de_prenda; ?></p>
-          <p class="card-text">Talle: <?php echo $talle?></p>
-          <p class="card-text">Colores: <?php echo $datos["colores"];?></p>
-          <p class="card-text">$<?php echo $datos["precio"];?></p>
-          
-          <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-            data-preference-id="118913702-015bb7b8-ebcd-4061-880a-54d15531ed38" data-source="button"></script>
+          <h5 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h5>
+          <p> <?php echo $reg['tipo_de_prenda']; ?></p>
+          <p><?php echo $reg['talle']; ?></p>
+        <a href="ver.php?id=<?php echo $reg['id'];?>" class="card-body">
+        <span class=" jam jam-coin"> <?php echo $reg['precio']; ?></span>
+          </a>
+          <br>
+            <div class="">
+                <a href="verproductos.php?id=<?php echo $reg['id'];?>"> <button class="boton_verproducto" type="button" name="button">Ver producto</button></a>
+            </div>
+            <div>
+                <p> <?php echo $reg['link']; ?></p>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  <div class="section_verproducto">
-      <a href="productos.php"><button type="button" class="btn btn-dark">Volver a tienda</button></a>
-    </div>
+
+    <?php } ?>
+
+  </div>
+</div>
 </main>
   <footer>
     MSoledadC©2022 <span class=" jam jam-map-marker">Bahía Blanca- Bs. As.</span>
@@ -127,4 +122,3 @@ $datos=mysqli_fetch_array($repuesta);
     crossorigin="anonymous"></script>
 </body>
 
-</html>

@@ -20,7 +20,9 @@ $datos=mysqli_fetch_array($respuesta);
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de Ropa</title>
   <!-- vinculacion bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -59,6 +61,7 @@ $datos=mysqli_fetch_array($respuesta);
               <li><a class="dropdown-item" href="nike.php">Nike</a></li>
               <li><a class="dropdown-item" href="preciomayor500.php">Precio mayor a 500</a></li>
               <li><a class="dropdown-item" href="buzo.php">Buzo</a></li>
+              <li><a class="dropdown-item" href="adidas.php">Adidas</a></li>  
             </ul>
           </li>
         </div>
