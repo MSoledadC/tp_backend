@@ -357,10 +357,30 @@ form input {
     border-radius: 25px;
 }
 
+@media (max-width: 1024px) {
+  .main_index { 
+    height: 90vh;
+}
+
+.card_listar {
+  width: 20%;
+}
+
+h2 {
+  filter: drop-shadow(2px 4px 6px #534403f4);
+}
+
+.redireccion_error {
+  top: 80%;
+}
+
+}
+
 @media (max-width: 600px) {
 
   .navbar-nav {
     flex-direction: column!important;
+    gap: 20px;
   }
 
   .main_index {
@@ -368,9 +388,20 @@ form input {
     background-position: inherit;
   }
 
+  h1{
+    text-align: center;
+  }
+
+  p{
+    color: #ffe77ada;
+  }
+
+  .index_a{
+    text-align: center;
+  }
   .card_listar {
     width: 50%;
-    margin: 60px;
+    margin: 10px;
   }
 
   .redireccion_error {

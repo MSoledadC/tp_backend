@@ -92,7 +92,7 @@ $datos=mysqli_fetch_array($repuesta);
   
   <section>
     <div class="container">
-      <div class="row">
+    <div class="row listar">
       <div class="card_listar w-50">
         <img class="card-img-top" src="data:image/jpg;base64, <?php echo base64_encode($imagen)?>" alt="..." />
         <div class="card-body">
